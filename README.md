@@ -24,18 +24,18 @@ Linux / Mac
 ```
 docker run -it --rm \
             -v $(pwd):/output \
-            -v </location/of/krb5.conf>:/etc/krb5.conf:ro
-            -e PRINCIPAL=<user@EXAMPLE.COM>
-            -e PASSWORD=<"P@ssw0rd">
+            -v </location/of/krb5.conf>:/etc/krb5.conf:ro \
+            -e PRINCIPAL=<user@EXAMPLE.COM> \
+            -e PASSWORD=<"P@ssw0rd"> \
             simplesteph/docker-kerberos-get-keytab
 ```
 
 Windows
 ```
-docker run -it --rm \
-            -v %cd%:/output \
-            -v <C:\location\of\krb5.ini>:/etc/krb5.conf:ro
-            -e PRINCIPAL=<user@EXAMPLE.COM>
-            -e PASSWORD=<"P@ssw0rd">
+docker run -it --rm ^
+            -v %cd%:/output ^
+            -v <C:\location\of\krb5.ini>:/etc/krb5.conf:ro ^
+            -e PRINCIPAL=<user@EXAMPLE.COM> ^
+            -e PASSWORD=<"P@ssw0rd"> ^
             simplesteph/docker-kerberos-get-keytab
 ```
