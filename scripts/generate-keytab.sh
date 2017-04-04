@@ -22,7 +22,7 @@ KEYTAB_FILE=${PRINCIPAL%@*}.keytab
 ktutil < <(echo -e "addent -password -p $PRINCIPAL -k 1 -e $KEYTAB_SECURITY\n$PASSWORD\nwkt $KEYTAB_FILE\nquit")
 
 # test keytab
-echo "Testing Keytab"
+echo "========== Testing Keytab =========="
 kinit -V -kt $KEYTAB_FILE $PRINCIPAL
 ret_code=$?
 if [ $ret_code != 0 ]; then
