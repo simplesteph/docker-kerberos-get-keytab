@@ -20,5 +20,5 @@ docker run -it --rm \
             -v /location/of/krb5.conf:/etc/krb5.conf:ro
             -e PRINCIPAL=user@EXAMPLE.COM
             -e PASSWORD="P@ssw0rd"
-            kerberos-get-keytab
+            simplesteph/docker-kerberos-get-keytab
 ```
