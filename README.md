@@ -5,7 +5,6 @@ This docker image allows you to automate the creation of a keytab file using onl
 ## Environment variables
 
 - `PRINCIPAL`: Your username, should be of the form `user@EXAMPLE.COM`
-- `PASSWORD`: Your password
 - `KEYTAB_SECURITY`: Security level for your keytab (default is `rc4-hmac`)
 
 ## Pre-requisites
@@ -26,7 +25,6 @@ docker run -it --rm \
             -v $(pwd):/output \
             -v </location/of/krb5.conf>:/etc/krb5.conf:ro \
             -e PRINCIPAL=<user@EXAMPLE.COM> \
-            -e PASSWORD=<"P@ssw0rd"> \
             simplesteph/docker-kerberos-get-keytab
 ```
 
@@ -36,6 +34,5 @@ docker run -it --rm ^
             -v %cd%:/output ^
             -v <C:\location\of\krb5.ini>:/etc/krb5.conf:ro ^
             -e PRINCIPAL=<user@EXAMPLE.COM> ^
-            -e PASSWORD=<"P@ssw0rd"> ^
             simplesteph/docker-kerberos-get-keytab
 ```

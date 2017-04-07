@@ -4,7 +4,10 @@ if [ ! -f /etc/krb5.conf ]; then
     exit 1
 fi
 if [[ -z "${PRINCIPAL// }" ]]; then echo "PRINCIPAL hasn't been provided"; exit 1; fi;
-if [[ -z "${PASSWORD// }" ]]; then echo "PASSWORD hasn't been provided"; exit 1; fi;
+# prompt user for password
+IFS= read -s  -p "Enter $PRINCIPAL password:" PASSWORD
+echo ""
+if [[ -z "${PASSWORD// }" ]]; then echo "PASSWORD hasn't been provided, exit"; exit 1; fi;
 KEYTAB_SECURITY=${KEYTAB_SECURITY:-"rc4-hmac"}
 
 # password verifications
