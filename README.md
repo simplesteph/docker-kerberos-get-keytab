@@ -27,6 +27,9 @@ docker run -it --rm ^
             simplesteph/docker-kerberos-get-keytab
 ```
 
+You may have to reboot your machine after running this command to reset the logins (see https://github.com/simplesteph/docker-kerberos-get-keytab/issues/1)
+
+
 ## Providing your own krb5.conf
 
 If you wish, you can provide your own krb5.conf to find the login servers
