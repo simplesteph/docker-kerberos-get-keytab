@@ -21,7 +21,7 @@ fi
 
 # generate keytab
 echo "========== Generating Keytab... =========="
-KEYTAB_FILE=${PRINCIPAL%@*}.keytab
+KEYTAB_FILE=$(echo $PRINCIPAL | cut -d@ -f1 | cut -d/ -f1).keytab
 ktutil < <(echo -e "addent -password -p $PRINCIPAL -k 1 -e $KEYTAB_SECURITY\n$PASSWORD\nwkt $KEYTAB_FILE\nquit")
 
 # test keytab
